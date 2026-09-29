@@ -1,9 +1,56 @@
 # Class - A blueprint for creating objects 
 
 class Car:
-    pass
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+        print()
+
+    def start(self):
+        print('Car started!')
+        
 
 # Main
-my_car = Car() # create an new instance of Car
+
+my_car = Car('Toyota', 'Camry')
+your_car = Car('Hyundai', 'Accent')
 # my_car is now an object of class 'Car'
-print(my_car)
+
+# print(my_car)
+# print(your_car)
+# print(my_car.__dict__)
+# print(your_car.__dict__)
+
+ 
+
+my_car.start()
+
+
+
+
+# Encapsulation bank acc
+# class BankAccount:
+#     def __init__(self, owner, balance):
+#         self.owner = owner
+#         self.__balance = balance  # Private attribute (Encapsulated)
+
+#     # Getter method to read private data safely
+#     def get_balance(self):
+#         return self.__balance
+
+#     # Setter method to modify private data with validation
+#     def deposit(self, amount):
+#         if amount > 0:
+#             self.__balance += amount
+#             print(f"Deposited ${amount}. New balance: ${self.__balance}")
+#         else:
+#             print("Invalid deposit amount!")
+
+# # Usage
+# account = BankAccount("Alice", 1000)
+# account.deposit(500)
+# # print(account.__balance)  # Throws an AttributeError (Protected)
+# print(f"Balance via getter: ${account.get_balance()}")
+
+
+
