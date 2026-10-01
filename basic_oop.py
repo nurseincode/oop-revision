@@ -8,12 +8,19 @@ class Car:
 
     def start(self):
         print(f'{self.make} {self.model} Car started!')
+
+    # def display(self):
+    #     return(f'This is a {self.make} {self.model}')
+
+    def __str__(self): # Returns a string representation of the object
+        return(f'This is a {self.make} {self.model}')
         
 
 # Main
 
 my_car = Car('Toyota', 'Camry')
-# your_car = Car('Hyundai', 'Accent')
+your_car = Car('Hyundai', 'Accent')
+
 # my_car is now an object of class 'Car'
 
 # print(my_car)
@@ -21,9 +28,17 @@ my_car = Car('Toyota', 'Camry')
 # print(my_car.__dict__)
 # print(your_car.__dict__)
 
- 
+# my_car.start()
+# your_car.start()
+# print(my_car.make)
+# print(my_car.display())
+print(my_car)
 
-my_car.start()
+
+
+
+
+
 
 
 
