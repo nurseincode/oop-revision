@@ -1,20 +1,31 @@
 # Class - A blueprint for creating objects 
 
 class Car:
-    def __init__(self, make, model):
-        self.make = make
+    def __init__(self, __make, model):
+        self.__make = __make # dot notation - <object>.<attr/method>
         self.model = model
-        print()
+       # self.__make = __make # __make on all instances of __make>results in AttributeError, makes the attr private
 
     def start(self):
-        print(f'{self.make} {self.model} Car started!')
+        print(f'{self.__make} {self.model} Car started!')
 
     # def display(self):
-    #     return(f'This is a {self.make} {self.model}')
+    #     return(f'This is a {self.__make} {self.model}')
 
     def __str__(self): # Returns a string representation of the object
-        return(f'This is a {self.make} {self.model}')
-        
+        return(f'This is a {self.__make} {self.model}')
+
+# Getter
+    def get_make(self):
+        return self.__make # Authorize # if condition
+    # Side-effects
+    
+# Setter
+    def set_make(self, new_make):
+        self.__make = new_make # Validate new_make > # Authorize
+
+class PetrolCar:
+    pass
 
 # Main
 
@@ -30,7 +41,7 @@ your_car = Car('Hyundai', 'Accent')
 
 # my_car.start()
 # your_car.start()
-# print(my_car.make)
+# print(my_car.__make)
 # print(my_car.display())
 print(my_car)
 
