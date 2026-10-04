@@ -9,8 +9,8 @@ class Car:
     def start(self):
         print(f'{self.__make} {self.model} Car started!')
 
-    # def display(self):
-    #     return(f'This is a {self.__make} {self.model}')
+    def display(self):
+        return(f'This is a {self.__make} {self.model}')
 
     def __str__(self): # Returns a string representation of the object
         return(f'This is a {self.__make} {self.model}')
@@ -24,26 +24,30 @@ class Car:
     def set_make(self, new_make):
         self.__make = new_make # Validate new_make > # Authorize
 
-class PetrolCar:
-    pass
+class PetrolCar(Car):
+        def __init__(self, make, model, tank_capacity_l):
+            super().__init__(make, model)
+            self.tank_capacity_l = tank_capacity_l
 
 # Main
+my_car = PetrolCar('Mercedes', 'Gclass', 100)
 
-my_car = Car('Toyota', 'Camry')
+# my_car = Car('Toyota', 'Camry')
 your_car = Car('Hyundai', 'Accent')
+
 
 # my_car is now an object of class 'Car'
 
 # print(my_car)
-# print(your_car)
+print(your_car)
 # print(my_car.__dict__)
 # print(your_car.__dict__)
 
 # my_car.start()
-# your_car.start()
-# print(my_car.__make)
-# print(my_car.display())
-print(my_car)
+your_car.start()
+# print(my_car.get_make())
+print(my_car.display())
+# print(my_car)
 
 
 
