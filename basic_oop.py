@@ -29,24 +29,39 @@ class PetrolCar(Car):
             super().__init__(make, model)
             self.tank_capacity_l = tank_capacity_l
 
+        def __str__(self):
+            return(f'{super().__str__()}. It has a {self.tank_capacity_l}l tank.')
+
+class ElectricCar(Car):
+    def __init__(self, make, model, battery_capacity_kwh):
+        super().__init__(make, model)
+        self.battery_capacity_kwh = battery_capacity_kwh
+
+    def __str__(self):
+        return (f'{super().__str__()}. It has a {self.battery_capacity_kwh}Kwh battery')
+
 # Main
-my_car = PetrolCar('Mercedes', 'Gclass', 100)
+my_car = PetrolCar('Mercedes', 'GWagon', 100)
+print(my_car)
 
 # my_car = Car('Toyota', 'Camry')
 your_car = Car('Hyundai', 'Accent')
+print(your_car)
 
+other_car = ElectricCar('Kia', 'EV3', 81.4)
+print(other_car)
 
 # my_car is now an object of class 'Car'
 
-# print(my_car)
-print(your_car)
+
+
 # print(my_car.__dict__)
 # print(your_car.__dict__)
 
 # my_car.start()
-your_car.start()
+# your_car.start()
 # print(my_car.get_make())
-print(my_car.display())
+# print(my_car.display())
 # print(my_car)
 
 
